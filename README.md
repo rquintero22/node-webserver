@@ -6,8 +6,13 @@ El servidor express se ejecutará en el puerto 3000 cuando sea ejecutado localme
 
 ### Pre-requisitos
 
-- Intalar express
-- body-parser
+- Instalar express
+- Instalar body-parser
+- Instalar colors
+- Instalar mongoosejs
+- Instalar mongoose-unique-validator
+- Instalar bcrypt
+- Instalar underscore
 - Instalar MongoDB
 - Instalar Robot3T
 
@@ -16,6 +21,7 @@ El servidor express se ejecutará en el puerto 3000 cuando sea ejecutado localme
 * Node.js
 * MongoDB
 * Robo3T
+* mlab
 
 ## Contribución
 
