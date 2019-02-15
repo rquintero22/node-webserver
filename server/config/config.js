@@ -1,4 +1,5 @@
 
+
 /**
  * Puerto
  */
@@ -31,12 +32,14 @@ process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
 
  let urlDB;
 
- if (process.env.NODE_ENV === 'dev') {
-     urlDB = 'mongodb://localhost:27017/cafe';
- } else { 
-    urlDB = process.env.MONGO_URI;   
-    //urlDB = 'mongodb://cafe-user:cafe123@cluster0-shard-00-00-tegdn.mongodb.net:27017,cluster0-shard-00-01-tegdn.mongodb.net:27017,cluster0-shard-00-02-tegdn.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true';
- }
+   if (process.env.NODE_ENV === 'dev') {
+      urlDB = 'mongodb://localhost:27017/cafe';
+  } else { 
+     urlDB = process.env.MONGO_URI;   
+     //urlDB = 'mongodb+srv://cafe:cafe123@cafe-lz6h8.mongodb.net/test?retryWrites=true';
+  } 
+
+ // urlDB = 'mongodb://cafe:cafe123@ds225294.mlab.com:25294/heroku_td8kst2f';
 
  process.env.urlDB = urlDB;
     

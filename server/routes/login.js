@@ -9,7 +9,7 @@ const app = express();
 app.post('/login',  (req, res) => {
 
     let body = req.body;
-
+   
     Usuario.findOne({email: body.email}, (err, usuarioDB) => {
         if (err) {
             return res.status(400).json({
@@ -22,7 +22,7 @@ app.post('/login',  (req, res) => {
             return res.status(400).json({
                 ok: false,
                 err: {
-                    message: '(Usuario) o contraseña inválida!'
+                    message: '(Usuario) o contraseña inválida!'                    
                 }
             });
         }
