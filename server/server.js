@@ -13,21 +13,23 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
  
-app.use( require('./routes/usuario') );
+// configuración global de rutas
+app.use( require('./routes/index') );
 
 /**
  * Conexión a mongoose
  */
 // mongoose.connect('mongodb://localhost:27017/cafe', (err, res) => {
 mongoose.connect(process.env.urlDB, (err, res) => {
-    if (err) throw err;
+    if (err) throw err.red;
 
     console.log('Base de datos Online'.green);
+    
 });
 
 /**
  * Escuchando servidor en el puerto indicado
  */
 app.listen(process.env.PORT, () => {
-    console.log('Escuchando el puerto ', process.env.PORT.green);
+    console.log('Escuchando el puerto '.green, process.env.PORT);
 });

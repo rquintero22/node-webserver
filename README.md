@@ -1,6 +1,6 @@
 # WEB SERVER
 
-Creación de servidor rest para peticiones GET, PUT, PATCH, DELETE,
+Creación de servidor rest para peticiones GET, PUT, PATCH, DELETE, se agrega validaciones con Jsonwebtoken.
 
 El servidor express se ejecutará en el puerto 3000 cuando sea ejecutado localmente.
 
@@ -13,6 +13,7 @@ El servidor express se ejecutará en el puerto 3000 cuando sea ejecutado localme
 - Instalar mongoose-unique-validator
 - Instalar bcrypt
 - Instalar underscore
+- Instalar jsonwebtoken
 - Instalar MongoDB
 - Instalar Robot3T
 
