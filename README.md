@@ -16,6 +16,7 @@ El servidor express se ejecutará en el puerto 3000 cuando sea ejecutado localme
 - Instalar jsonwebtoken
 - Instalar MongoDB
 - Instalar Robot3T
+- Instalar google-auth-library
 
 ## Construido con 
 
@@ -38,3 +39,4 @@ Se usa [SemVer](http://semver.org/) para el versionamiento de la aplicación
 ## Licencia
 
 Este proyecto está bajo la licensia (MIT) - ver [LICENSE.md](LICENSE.md) para más detalle.
+

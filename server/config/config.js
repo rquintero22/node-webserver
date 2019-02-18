@@ -38,7 +38,12 @@ process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
      //urlDB = 'mongodb+srv://cafe:cafe123@cafe-lz6h8.mongodb.net/test?retryWrites=true';
   } 
 
- 
-
  process.env.urlDB = urlDB;
+
+
+ /**
+  * Cliente ID Google
+  */
+
+ process.env.CLIENT_ID = process.env.CLIENT_ID || '567994918152-fvbta9gkappam6nvm617lt4ei89752kv.apps.googleusercontent.com' ;
     
