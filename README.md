@@ -17,6 +17,7 @@ El servidor express se ejecutará en el puerto 3000 cuando sea ejecutado localme
 - Instalar MongoDB
 - Instalar Robot3T
 - Instalar google-auth-library
+- Instalar express-fileupload
 
 ## Construido con 
 

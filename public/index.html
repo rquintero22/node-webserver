@@ -9,6 +9,9 @@
     <meta name="google-signin-client_id" content="567994918152-fvbta9gkappam6nvm617lt4ei89752kv.apps.googleusercontent.com">
 </head>
 <body>
+
+    <!-- <img src="http://localhost:3000/imagen/usuarios/5c65812cd5125f08f80cd1b1-936.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InJvbGUiOiJBRE1JTl9ST0xFIiwiZXN0YWRvIjp0cnVlLCJnb29nbGUiOmZhbHNlLCJfaWQiOiI1YzY1ODEyNGQ1MTI1ZjA4ZjgwY2QxYjAiLCJub21icmUiOiJ0ZXN0MSIsImVtYWlsIjoidGVzdDFAdGVzdC5jb20iLCJfX3YiOjB9LCJpYXQiOjE1NTA1MjU4NjUsImV4cCI6MTU1MDUyODQ1N30.boZFCfxnuuBb_UD1VyPAiliJFnUALWNxcuBQ_n-BTCc"> -->
+
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
     <a href="#" onclick="signOut();">Sign out</a>
@@ -23,12 +26,12 @@
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 
         var id_token = googleUser.getAuthResponse().id_token;
-        console.log(id_token);
+       
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '/google');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function() {
-            console.log('Signed in as: ' + xhr.responseText);
+            // console.log('Signed in as: ' + xhr.responseText);
         };
 
         xhr.send('idtoken=' + id_token);
