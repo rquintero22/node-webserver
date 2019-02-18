@@ -9,10 +9,7 @@ let categoriaSchema = new Schema({
         unique: true,
         required: [true, 'La descripción es requerida']
     },
-    usuario: {
-        String,
-        required: false
-    }
+    usuario: { type: Schema.Types.ObjectId, ref: 'Usuario' }
 });
 
 categoriaSchema.plugin(uniqueValidator, {

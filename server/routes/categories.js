@@ -17,6 +17,7 @@ app.get('/categoria', (req, res) => {
     limite = Number(limite);
 
     Categoria.find({}, )
+        .sort('descripcion')
         .skip(desde)  // ejecuta desde esta registro
         .limit(limite) // limita el número de registro que se desea mostrar
         .populate('Usuario', 'nombre role estado google email')
@@ -44,12 +45,10 @@ app.get('/categoria', (req, res) => {
  * Obtiene la categoriás indicada
  */
 app.get('/categoria/:id', verificaToken, (req, res) => {
-    let id = req.params.id;    
-    let body = req.body; 
 
-    Categoria.findById(id, )
-        .skip(desde)  // ejecuta desde esta registro
-        .limit(limite) // limita el número de registro que se desea mostrar
+    let id = req.params.id;  
+
+    Categoria.findById(id )
         .populate('Usuario', 'nombre role estado google email')
         .exec( (err, categorias ) => {
 
@@ -62,8 +61,7 @@ app.get('/categoria/:id', verificaToken, (req, res) => {
 
             res.json({
                 ok: true,
-                categorias,
-                total
+                categorias
             });
            
         } );
@@ -102,7 +100,7 @@ app.post('/categoria', [verificaToken, verificaAdmin_Role], function (req, res) 
  * Modifica el usuario
  * se le debe enviar el id del usuario
  */
-app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], function (req, res) {
+app.put('/categoria/:id', [verificaToken, verificaAdmin_Role], function (req, res) {
     let id = req.params.id;
     let body = req.body;   
           
@@ -125,16 +123,16 @@ app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], function (req, res)
 });
 
  /**
-  * Da de baja al usuario indicado
+  * Da de baja a la categoría indicado
   */
- app.delete('/usuario/:id', [verificaToken, verificaAdmin_Role], function (req, res) {      
+ app.delete('/categoria/:id', [verificaToken, verificaAdmin_Role], function (req, res) {      
     let id = req.params.id;
 
     let cambioEstado = {
         estado: false
     }
 
-   Usuario.findByIdAndUpdate(id, cambioEstado, { new: true }, (err, usuarioDB) => {
+   Categoria.findByIdAndRemove(id, (err, categoriaDB) => {
         
     if ( err ) {
         return res.status(400).json({
@@ -143,17 +141,17 @@ app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], function (req, res)
         });
     }   
 
-    if ( !usuarioDB  ) {
+    if ( !categoriaDB  ) {
         return res.status(400).json({
             ok: false,
-            err: { message: 'Usuario no encontrado'}
+            err: { message: 'La categoría no se encuentra registrada!'}
         });
     }
 
 
     res.json({
         ok: true,
-        usuario: usuarioDB
+        message: 'Categoría eliminada!'
     });
 
   });
