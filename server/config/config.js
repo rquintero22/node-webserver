@@ -1,4 +1,3 @@
-require('dotenv/config')
 
 /**
  * Puerto
@@ -39,7 +38,7 @@ process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
      //urlDB = 'mongodb+srv://cafe:cafe123@cafe-lz6h8.mongodb.net/test?retryWrites=true';
   } 
 
- // urlDB = 'mongodb://cafe:cafe123@ds225294.mlab.com:25294/heroku_td8kst2f';
+ 
 
  process.env.urlDB = urlDB;
     
